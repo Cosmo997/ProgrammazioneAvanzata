@@ -1,4 +1,6 @@
 import java.util.Random;
+//Ciao
+
 
 public class Bot implements Player{
 
