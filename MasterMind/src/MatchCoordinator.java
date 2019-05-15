@@ -6,6 +6,7 @@
  *
  */
 
-public class MatchCoordinator {
+public class MatchCoordinator
+	{
 
-}
+	}

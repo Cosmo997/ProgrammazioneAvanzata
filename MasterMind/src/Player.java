@@ -17,7 +17,7 @@ public interface Player
 		 * Genera un array di interi che può essere utilizzato sia come codice da
 		 * indovinare, sia come tentativo
 		 * 
-		 * @param settings 
+		 * @param settings
 		 * @return Un array di interi
 		 */
 		public int[] generateCode(GameParameters settings);
