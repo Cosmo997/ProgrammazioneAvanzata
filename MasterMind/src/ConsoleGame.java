@@ -4,11 +4,6 @@ import java.io.PrintStream;
 import java.util.Random;
 import java.util.function.Function;
 
-import it.unicam.cs.pa.battleship19.ConsoleView;
-import it.unicam.cs.pa.battleship19.GameParameters;
-import it.unicam.cs.pa.battleship19.InteractivePlayer;
-import it.unicam.cs.pa.battleship19.Player;
-import it.unicam.cs.pa.battleship19.RandomPlayer;
 
 
 /**
@@ -45,14 +40,15 @@ public class ConsoleGame {
 		this.playerFactory1 = playerFactory1;
 		this.playerFactory2 = playerFactory2;
 	}
-	
-	private static Function<GameParameters, Player> getPlayerFactory(String string) {
+	/*
+	private static Player getPlayerFactory(String string) {
 		if (string.equals("bot")) {
-			return p -> new Bot(new Random(),string);
+			//return p -> new Bot(new Random(),p.getSize());
+			return Bot bot = new Bot(bot.getID());
 		}
 		return (p -> new Human(p, new ConsoleView(string)));
 	}
-	
+	*/
 	public static void main(String[] args) {
 		start();
 
