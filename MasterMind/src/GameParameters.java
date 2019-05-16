@@ -15,10 +15,12 @@ public class GameParameters
 	{
 		final boolean duplicateAllow;
 		final int codeLenght;
+		
 		int attempts;
 		final int minCodValue = 1;
 		int maxCodValue;
 
+		
 		/**
 		 * Costruttore con valori in ingresso. Il numero di tentativi e il numero
 		 * massimo di caratteri viene impostato a seconda della lunghezza del codice
@@ -29,6 +31,7 @@ public class GameParameters
 		 *                     numero tra 4-6-8
 		 * 
 		 */
+		
 		public GameParameters(int lunghezza, boolean duplicate) throws IOException
 			{
 				this.codeLenght = lunghezza;
@@ -59,6 +62,7 @@ public class GameParameters
 		 * Costruttore di default che non prende parametri di ingresso e inserisce
 		 * impostazioni standard
 		 */
+		
 		public GameParameters()
 			{
 				this.codeLenght = 4;
@@ -66,5 +70,14 @@ public class GameParameters
 				this.attempts = 9;
 				this.maxCodValue = 6;
 			}
+		
+		public int getCodeLenght() {
+			return codeLenght;
+		}
+
+		public int getAttempts() {
+			return attempts;
+		}
+
 
 	}

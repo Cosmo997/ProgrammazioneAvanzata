@@ -8,5 +8,5 @@
 
 public class MatchCoordinator
 	{
-
+		//metodo placeCode, che ce mette il codice nell'array del palyer[id];
 	}

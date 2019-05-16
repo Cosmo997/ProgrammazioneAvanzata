@@ -12,7 +12,6 @@ public class Human implements Player
 		@Override
 		public String getID()
 			{
-				// TODO Auto-generated method stub
 				return ID;
 			}
 

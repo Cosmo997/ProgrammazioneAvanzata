@@ -1,7 +1,3 @@
-/Bot.class
-/FieldArray.class
-/FieldView.class
-/GameParameters.class
-/Human.class
-/MatchCoordinator.class
-/Player.class
+/ConsoleGame.class
+/IllegalParameterException.class
+/IllegalCheckException.class
