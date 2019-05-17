@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 /**
  * <b>Responsabilità </b>: Gestire la strategia di un giocatore
  * 
@@ -19,7 +21,8 @@ public interface Player
 		 * 
 		 * @param settings
 		 * @return Un array di interi
+		 * @throws IOException 
 		 */
-		public int[] generateCode(GameParameters settings);
+		public int[] generateCode(GameParameters settings) throws IOException;
 
 	}
