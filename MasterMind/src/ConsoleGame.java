@@ -1,7 +1,17 @@
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.util.Random;
 import java.util.function.Function;
+
+import it.unicam.cs.pa.battleship19.ConsoleGame;
+import it.unicam.cs.pa.battleship19.ConsoleView;
+import it.unicam.cs.pa.battleship19.GameParameters;
+import it.unicam.cs.pa.battleship19.InteractivePlayer;
+import it.unicam.cs.pa.battleship19.Player;
+import it.unicam.cs.pa.battleship19.RandomPlayer;
+import sun.tools.serialver.resources.serialver;
 
 /**
  * <b>Responsabilità </b>: Far partire il gioco
@@ -11,17 +21,15 @@ import java.util.function.Function;
  */
 public class ConsoleGame
 {
-
+	// DA FASSELO SPIEGA
+	private Function<GameParameters, Player> playerFactory1;
+	private Function<GameParameters, Player> playerFactory2;
 	/**
-	 * @param output         Stringa in output
-	 * @param input          Stringa in input
-	 * @param playerFactory1 Funzione che crea un factory del primo player
-	 * @param playerFactory2 Funzione che crea un factory del secondo player
+	 * @param output Stringa in output
+	 * @param input  Stringa in input
 	 */
 	private PrintStream output;
 	private BufferedReader input;
-	private Function<GameParameters, Player> playerFactory2;
-	private Function<GameParameters, Player> playerFactory1;
 
 	public ConsoleGame(	Function<GameParameters, Player> playerFactory1,
 						Function<GameParameters, Player> playerFactory2 )
@@ -39,22 +47,53 @@ public class ConsoleGame
 		this.playerFactory1 = playerFactory1;
 		this.playerFactory2 = playerFactory2;
 	}
-	/*
-	 * private static Player getPlayerFactory(String string) { if
-	 * (string.equals("bot")) { //return p -> new Bot(new Random(),p.getSize());
-	 * return Bot bot = new Bot(bot.getID()); } return (p -> new Human(p, new
-	 * ConsoleView(string))); }
-	 */
 
-	public static void main(String[] args)
+	public static void main(String argv[]) throws IOException
 	{
-		start();
+		ConsoleGame direttore = new ConsoleGame(getPlayerFactory(argv[0]), getPlayerFactory(argv[1]) );
+		direttore.start();
 
 	}
 
-	private static void start()
+	private static Function<GameParameters, Player> getPlayerFactory(String string)
 	{
+		if (string.equals("bot"))
+		{
+			return p -> new Bot(string);
+		}
+		return p -> new Human(string);
 
 	}
 
+	private void start() throws IOException
+	{do
+		{
+		//Creo arbitro a cui passo i parametri e i 2 player
+		GameParameters settings = new GameParameters(); //Prendere i 2 valori da tastiera
+			MatchCoordinator mc = new MatchCoordinator(settings, playerFactory1, playerFactory2);
+			System.out.println(mc.play);
+	
+		}
+		while (matchAgain());
+	}
+
+	private boolean matchAgain() throws IOException
+	{
+		while (true)
+		{
+			output.println("Try again? (S/N)");
+			String str = input.readLine();
+			if (str.equals("N"))
+			{
+				output.println("Ciao chicco");
+				return false;
+			}
+			if (str.equals("S"))
+			{
+				output.println("Daje");
+				return true;
+			}
+			output.println("Inserisci S o N!");
+		}
+	}
 }
