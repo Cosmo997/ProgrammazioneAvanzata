@@ -47,26 +47,15 @@ public class ConsoleGame
 		this.playerFactory1 = playerFactory1;
 		this.playerFactory2 = playerFactory2;
 	}
-<<<<<<< Upstream, based on branch 'master' of https://github.com/Cosmo997/ProgrammazioneAvanzata.git
-	
-	/*
-	 * private static Player getPlayerFactory(String string) { if
-	 * (string.equals("bot")) { //return p -> new Bot(new Random(),p.getSize());
-	 * return Bot bot = new Bot(bot.getID()); } return (p -> new Human(p, new
-	 * ConsoleView(string))); }
-	 */
-=======
->>>>>>> 3a8143a Detacchissimo
+
+
 
 	public static void main(String argv[]) throws IOException
 	{
-<<<<<<< Upstream, based on branch 'master' of https://github.com/Cosmo997/ProgrammazioneAvanzata.git
-		start();
-=======
+
 		ConsoleGame direttore = new ConsoleGame(getPlayerFactory(argv[0]), getPlayerFactory(argv[1]) );
 		direttore.start();
 
->>>>>>> 3a8143a Detacchissimo
 	}
 
 	private static Function<GameParameters, Player> getPlayerFactory(String string)
