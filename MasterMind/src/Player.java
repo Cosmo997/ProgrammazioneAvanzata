@@ -6,6 +6,7 @@ import java.io.IOException;
  * @author TeamTrustMe
  * @param
  */
+
 public interface Player
 	{
 		/**

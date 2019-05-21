@@ -9,6 +9,7 @@ public class Bot implements Player
 		public Bot(String name)
 			{
 				this.ID = name;
+				
 			}
 
 		@Override

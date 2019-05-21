@@ -11,6 +11,7 @@ import java.io.IOException;
  * @param minCodValue    Numero minimo di caratteri del codice
  * @param maxCodValue    Numero massimo di caratteri del codice
  */
+
 public class GameParameters
 	{
 		final boolean duplicateAllow;
