@@ -4,7 +4,7 @@ public class Bot implements Player
 	{
 
 		public String ID;
-		public int[] appArray;
+		
 
 		public Bot(String name)
 			{
@@ -27,8 +27,7 @@ public class Bot implements Player
 		 **/
 		public int[] generateCode(GameParameters settings)
 			{
-				// TODO Auto-generated method stub
-				appArray = new int[settings.codeLenght];
+				int[] appArray = new int[settings.codeLenght];
 
 				for (int i = 0; i < settings.codeLenght; i++)
 					{
