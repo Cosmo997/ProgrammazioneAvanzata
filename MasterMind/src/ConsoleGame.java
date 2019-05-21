@@ -39,6 +39,7 @@ public class ConsoleGame
 		this.playerFactory1 = playerFactory1;
 		this.playerFactory2 = playerFactory2;
 	}
+	
 	/*
 	 * private static Player getPlayerFactory(String string) { if
 	 * (string.equals("bot")) { //return p -> new Bot(new Random(),p.getSize());
@@ -49,7 +50,6 @@ public class ConsoleGame
 	public static void main(String[] args)
 	{
 		start();
-
 	}
 
 	private static void start()

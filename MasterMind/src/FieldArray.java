@@ -22,23 +22,19 @@ public class FieldArray implements FieldView
 				decodeArray = new int[lunghezza];
 				codeArray = new int[lunghezza];
 				suggestArray = new int[lunghezza];
-
 			}
 
 		@Override
 		public int[] getArrayFromDeco()
+		
 			{
-				// TODO Auto-generated method stub
 				return this.decodeArray;
-
 			}
 
 		@Override
 		public int[] getArrayFromCode()
 			{
-				// TODO Auto-generated method stub
 				return this.codeArray;
-
 			}
 
 	}
