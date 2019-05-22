@@ -5,13 +5,6 @@ import java.io.PrintStream;
 import java.util.Random;
 import java.util.function.Function;
 
-import it.unicam.cs.pa.battleship19.ConsoleGame;
-import it.unicam.cs.pa.battleship19.ConsoleView;
-import it.unicam.cs.pa.battleship19.GameParameters;
-import it.unicam.cs.pa.battleship19.InteractivePlayer;
-import it.unicam.cs.pa.battleship19.Player;
-import it.unicam.cs.pa.battleship19.RandomPlayer;
-import sun.tools.serialver.resources.serialver;
 
 /**
  * <b>Responsabilità </b>: Far partire il gioco
@@ -74,7 +67,7 @@ public class ConsoleGame
 		//Creo arbitro a cui passo i parametri e i 2 player
 		GameParameters settings = new GameParameters(); //Prendere i 2 valori da tastiera
 			MatchCoordinator mc = new MatchCoordinator(settings, playerFactory1, playerFactory2);
-			System.out.println(mc.play);
+			System.out.println(mc.play());
 	
 		}
 		while (matchAgain());
