@@ -12,6 +12,7 @@ import java.io.IOException;
  * @param maxCodValue    Numero massimo di caratteri del codice
  */
 
+
 public class GameParameters
 	{
 		final boolean duplicateAllow;

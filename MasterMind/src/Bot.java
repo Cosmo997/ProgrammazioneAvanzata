@@ -6,6 +6,7 @@ public class Bot implements Player
 		public String ID;
 		
 
+		
 		public Bot(String name)
 			{
 				this.ID = name;

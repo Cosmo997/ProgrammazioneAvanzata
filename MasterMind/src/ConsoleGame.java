@@ -30,6 +30,7 @@ public class ConsoleGame
 	 * @param output Stringa in output
 	 * @param input  Stringa in input
 	 */
+	
 	private PrintStream output;
 	private BufferedReader input;
 

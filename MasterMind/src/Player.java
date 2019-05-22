@@ -7,6 +7,7 @@ import java.io.IOException;
  * @param
  */
 
+
 public interface Player
 	{
 		/**

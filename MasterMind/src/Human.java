@@ -8,6 +8,7 @@ public class Human implements Player
 		public String ID;
 		BufferedReader codice;
 		
+		
 		public Human()
 		{
 			this.ID = "Franco";
