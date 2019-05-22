@@ -21,6 +21,7 @@ import sun.tools.serialver.resources.serialver;
  */
 
 
+
 public class ConsoleGame
 {
 	// DA FASSELO SPIEGA

@@ -13,6 +13,7 @@ import java.io.IOException;
  */
 
 
+
 public class GameParameters
 	{
 		final boolean duplicateAllow;

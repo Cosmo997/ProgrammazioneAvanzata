@@ -8,6 +8,7 @@ import java.io.IOException;
  */
 
 
+
 public interface Player
 	{
 		/**

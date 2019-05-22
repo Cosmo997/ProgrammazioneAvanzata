@@ -8,6 +8,7 @@
 public interface FieldView
 	{
 
+	
 		// prende l'array dal decodificatore per darlo al checkResult
 		int[] getArrayFromDeco();
 
