@@ -7,22 +7,17 @@
  */
 public class Risultato
 {
-	private final int winnerId;
+	private final String vincitore;
 
-	public Risultato(int winnerId) 
+	public Risultato(String v) 
 	{
-		this.winnerId = winnerId;
+		this.vincitore = v;
 	}
 
 	/**
-	 * @return the winnerId
+	 * @return Il nome del vincitore
 	 */
-	public int getWinnerId() {
-		return winnerId;
-	}
-
-	@Override
-	public String toString() {
-		return "Il giocatore "+winnerId+" ha vinto!";
+	public String getWinnerName() {
+		return "Il giocatore "+vincitore+" ha vinto!";
 	}
 }

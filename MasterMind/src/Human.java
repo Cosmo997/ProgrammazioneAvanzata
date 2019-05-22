@@ -4,22 +4,22 @@ import java.io.IOException;
 public class Human implements Player
 	{
 
-		public String ID;
+		public String nome;
 		BufferedReader codice;
 		
 		public Human()
 		{
-			this.ID = "Franco";
+			this.nome = "Franco";
 		}
 		public Human(String name)
 			{
-				this.ID = name;
+				this.nome = name;
 			}
 
 		@Override
-		public String getID()
+		public String getNome()
 			{
-				return ID;
+				return nome;
 			}
 
 		/**

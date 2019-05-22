@@ -3,21 +3,14 @@ import java.util.Random;
 public class Bot implements Player
 	{
 
-		public String ID;
+		public String nome;
+
+		public Bot()
+			{
+				this.nome = "BOT";
+			}
+
 		
-
-		public Bot(String name)
-			{
-				this.ID = name;
-			}
-
-		@Override
-		public String getID()
-			{
-				// TODO Auto-generated method stub
-				return ID;
-			}
-
 		/**
 		 * Metodo che genera un codice random per il bot
 		 * 
@@ -38,5 +31,11 @@ public class Bot implements Player
 					}
 				return appArray;
 			}
+
+
+		@Override
+		public String getNome() {
+			return nome;
+		}
 
 	}

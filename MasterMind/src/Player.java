@@ -13,7 +13,7 @@ public interface Player
 		 * 
 		 * @return L'ID del player
 		 */
-		public String getID();
+		public String getNome();
 
 		/**
 		 * Genera un array di interi che può essere utilizzato sia come codice da

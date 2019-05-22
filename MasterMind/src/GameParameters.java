@@ -52,10 +52,6 @@ public class GameParameters
 						this.attempts = 21;
 						this.maxCodValue = 10;
 					}
-				else
-					{
-						throw new IOException("Il numero inserito non è utilizzabile");
-					}
 			}
 
 		/**
