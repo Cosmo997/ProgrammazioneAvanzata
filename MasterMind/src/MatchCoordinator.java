@@ -16,9 +16,8 @@ public class MatchCoordinator
 	private Player[] players;
 	private GameParameters parameters;
 	private int turn;
-	private int[] soluzione;
-
-	// metodo placeCode, che ce mette il codice nell'array del palyer[id];
+	private Risultato vincitore;
+	
 	public MatchCoordinator(GameParameters parametri,
 							Function<GameParameters, Player> playerFactory1,
 							Function<GameParameters, Player> playerFactory2 )
@@ -30,12 +29,20 @@ public class MatchCoordinator
 	
 	public Risultato play()
 	{
-		return 0;
+		
+		while(this.turn <= parameters.attempts)
+		{
+			return null;
+		}
+		
+		return vincitore;
+		
 	}
 
+	// metodo placeCode, che ce mette il codice nell'array del palyer[id];
 	public void placeCode(int[] chicco)
 	{
-		this.soluzione = chicco;
+		//this.soluzione = chicco;
 	}
 
 }

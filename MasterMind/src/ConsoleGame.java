@@ -61,14 +61,13 @@ public class ConsoleGame
 
 	}
 
-	private void start() throws IOException
-	{do
+	private void start() throws IOException{
+		do
 		{
 		//Creo arbitro a cui passo i parametri e i 2 player
 		GameParameters settings = new GameParameters(); //Prendere i 2 valori da tastiera
 			MatchCoordinator mc = new MatchCoordinator(settings, playerFactory1, playerFactory2);
 			System.out.println(mc.play());
-	
 		}
 		while (matchAgain());
 	}

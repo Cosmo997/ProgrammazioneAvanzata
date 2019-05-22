@@ -13,4 +13,5 @@ public interface FieldView
 		// prende l'array dal codificatore per darlo al checkResult
 		int[] getArrayFromCode();
 
+
 	}
