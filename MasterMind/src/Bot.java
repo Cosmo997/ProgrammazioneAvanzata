@@ -9,13 +9,11 @@ public class Bot implements Player
 		public Bot(String name)
 			{
 				this.ID = name;
-				
 			}
 
 		@Override
 		public String getID()
 			{
-				// TODO Auto-generated method stub
 				return ID;
 			}
 
