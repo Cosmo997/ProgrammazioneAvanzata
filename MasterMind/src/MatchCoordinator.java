@@ -27,11 +27,11 @@ public class MatchCoordinator
 
 	// metodo placeCode, che ce mette il codice nell'array del palyer[id];
 	public MatchCoordinator(GameParameters parametri,
-							Function<GameParameters, Player> playerFactory1,
-							Function<GameParameters, Player> playerFactory2 )
+							Player uno,
+							Player due)
 	{
 		this.parameters = parametri;
-		this.players = new Player[] { playerFactory1.apply(parameters), playerFactory2.apply(parameters) };
+		this.players = new Player[] {uno,due};
 		this.turn = 0;
 	}
 	

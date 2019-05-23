@@ -1,14 +1,2 @@
-/Bot.class
 /ConsoleGame.class
-/FieldArray.class
-/FieldView.class
-/GameParameters.class
-/Human.class
-/IllegalCheckException.class
-/IllegalParameterException.class
 /MatchCoordinator.class
-/Player.class
-/Risultato.class
-/Vincitore.class
-/Perdente.class
-/PlayerFactory.class

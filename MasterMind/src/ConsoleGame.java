@@ -37,7 +37,8 @@ public class ConsoleGame
 
 	public ConsoleGame(Player uno,Player due)
 	{
-		
+		this.uno = uno;
+		this.due = due;
 	}
 
 	public static void main(String argv[]) throws IOException
@@ -54,9 +55,9 @@ public class ConsoleGame
 	private void start() throws IOException
 	{do
 		{
-		//Creo arbitro a cui passo i parametri e i 2 player
-			GameParameters settings = new GameParameters(); //Prendere i 2 valori da tastiera
-//			MatchCoordinator mc = new MatchCoordinator(settings, playerFactory1, playerFactory2);
+//			Creo arbitro a cui passo i parametri e i 2 player
+			GameParameters settings = new GameParameters(prendiLunghezza(),prendiDuplicati()); //Prendere i 2 valori da tastiera
+			MatchCoordinator mc = new MatchCoordinator(settings, this.uno, this.due);
 //			System.out.println(mc.play);
 	
 		}
