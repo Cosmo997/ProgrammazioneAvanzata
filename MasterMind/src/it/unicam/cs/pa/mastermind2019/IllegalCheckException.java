@@ -1,3 +1,4 @@
+package it.unicam.cs.pa.mastermind2019;
 /**
  * 
  */

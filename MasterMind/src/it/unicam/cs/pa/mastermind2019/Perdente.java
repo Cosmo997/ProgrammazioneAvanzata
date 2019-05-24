@@ -1,19 +1,20 @@
+package it.unicam.cs.pa.mastermind2019;
 /**
  * @author Daniele
  *
  */
 public class Perdente implements Risultato
 {
-	private final int loserId;
+	private final String loserId;
 
-	public Perdente(int winnerId) {
+	public Perdente(String winnerId) {
 		this.loserId = winnerId;
 	}
 
 	/**
 	 * @return the winnerId
 	 */
-	public int getWinnerId() {
+	public String getWinnerId() {
 		return loserId;
 	}
 

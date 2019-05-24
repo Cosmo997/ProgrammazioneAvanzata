@@ -1,23 +1,24 @@
+package it.unicam.cs.pa.mastermind2019;
+
 /**
  * @author Daniele
  *
  */
 public class Vincitore implements Risultato
 {
-	private final int winnerId;
+	private final String winnerId;
 
-	public Vincitore(int winnerId) {
+	public Vincitore(String winnerId) {
 		this.winnerId = winnerId;
 	}
 
 	/**
 	 * @return the winnerId
 	 */
-	public int getWinnerId() {
+	public String getWinnerId() {
 		return winnerId;
 	}
 
-	@Override
 	public String toString() {
 		return "Il giocatore "+winnerId+" ha vinto!";
 	}

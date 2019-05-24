@@ -1,3 +1,4 @@
+package it.unicam.cs.pa.mastermind2019;
 import java.util.Random;
 
 public class Bot implements Player
