@@ -4,6 +4,7 @@ import java.util.Random;
 public class Bot implements Player
 	{
 
+<<<<<<< HEAD:MasterMind/src/it/unicam/cs/pa/mastermind2019/Bot.java
 		public String ID;
 	
 	
@@ -16,8 +17,16 @@ public class Bot implements Player
 		public String getID()
 			{
 				return ID;
+=======
+		public String nome;
+
+		public Bot()
+			{
+				this.nome = "BOT";
+>>>>>>> master:MasterMind/src/Bot.java
 			}
 
+		
 		/**
 		 * Metodo che genera un codice random per il bot
 		 * 
@@ -38,5 +47,11 @@ public class Bot implements Player
 					}
 				return appArray;
 			}
+
+
+		@Override
+		public String getNome() {
+			return nome;
+		}
 
 	}
