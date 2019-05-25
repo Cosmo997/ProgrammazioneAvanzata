@@ -15,8 +15,10 @@ public class ConsoleGame
 {
 
 	/**
-	 * @param output Stringa in output
-	 * @param input  Stringa in input
+	 * @param output Stringa in output.
+	 * @param input  Stringa in input.
+	 * @param uno    Primo {@link}Player della partita,
+	 * @param due    Secondo {@link}Player della partita.
 	 */
 
 	private PrintStream output;
@@ -24,6 +26,12 @@ public class ConsoleGame
 	private Player uno;
 	private Player due;
 
+	/**
+	 * Costruttore di ConsoleGame
+	 * 
+	 * @param uno Primo giocatore della partita.
+	 * @param due Secondo giocatore della partita.
+	 */
 	public ConsoleGame(	Player uno,
 						Player due )
 	{
@@ -33,13 +41,21 @@ public class ConsoleGame
 
 	public static void main(String argv[]) throws IOException
 	{
+//		Creo i due player
 		PlayerFactory player1 = new PlayerFactory();
 		PlayerFactory player2 = new PlayerFactory();
+//		 Creo un oggetto direttore
 		ConsoleGame direttore = new ConsoleGame(player1.getPlayer(player1.prendiNome()), player2.getPlayer(player2.prendiNome()));
+//		Avvio il metodo start()
 		direttore.start();
 
 	}
 
+	/**
+	 * Metodo iniziale dove prendiLunghezza()
+	 * 
+	 * @throws IOException
+	 */
 	private void start() throws IOException
 	{
 		do
@@ -48,13 +64,19 @@ public class ConsoleGame
 //			Prende i due valori da tastiera
 			GameParameters settings = new GameParameters(prendiLunghezza(), prendiDuplicati());
 			Campo terreno = new Campo(settings);
-			MatchCoordinator mc = new MatchCoordinator(settings,terreno, this.uno, this.due);
+			MatchCoordinator mc = new MatchCoordinator(settings, terreno, this.uno, this.due);
 			System.out.println(mc.play());
 
 		}
 		while (matchAgain());
 	}
 
+	/**
+	 * ffff
+	 * 
+	 * @return
+	 * @throws IOException
+	 */
 	private int prendiLunghezza() throws IOException
 	{
 		while (true)

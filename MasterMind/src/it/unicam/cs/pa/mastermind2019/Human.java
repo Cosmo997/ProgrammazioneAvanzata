@@ -1,7 +1,11 @@
 package it.unicam.cs.pa.mastermind2019;
 import java.io.BufferedReader;
 import java.io.IOException;
-
+/**
+ * <b>Responsabilità </b>: Creare un human
+ * @author Daniele
+ *
+ */
 
 public class Human implements Player
 	{
@@ -21,7 +25,7 @@ public class Human implements Player
 			}
 
 		@Override
-		public String getNome()
+		public String getID()
 			{
 				return nome;
 			}

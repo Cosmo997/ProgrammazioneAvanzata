@@ -1,4 +1,5 @@
 package it.unicam.cs.pa.mastermind2019;
+
 import java.io.IOException;
 
 /**
@@ -7,9 +8,6 @@ import java.io.IOException;
  * @author TeamTrustMe
  * @param
  */
-
-
-
 public interface Player
 	{
 		/**
@@ -17,7 +15,7 @@ public interface Player
 		 * 
 		 * @return L'ID del player
 		 */
-		public String getNome();
+		public String getID();
 
 		/**
 		 * Genera un array di interi che può essere utilizzato sia come codice da

@@ -1,12 +1,9 @@
 package it.unicam.cs.pa.mastermind2019;
+
 import java.io.IOException;
-import java.util.function.Function;
-
-
 
 /**
- * <b>Responsabilità</b>: gestire la partita, prende i codici dei giocatori e li
- * inserisce negli apposoti array
+ * <b>Responsabilità</b>: gestire la partita
  * 
  * @author TeamTrustMe
  * @param players    Array contenente i riferimenti ai due giocatori.

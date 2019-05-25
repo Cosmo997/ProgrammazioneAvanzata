@@ -1,8 +1,10 @@
 package it.unicam.cs.pa.mastermind2019;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 
 /**
+ * <b>Responsabilità </b>: Creare il giocatore adatto alla richiesta
  * 
  * @author Daniele
  *
@@ -10,6 +12,7 @@ import java.io.IOException;
 public class PlayerFactory
 {
 	private BufferedReader input;
+
 	public PlayerFactory()
 	{
 
@@ -24,7 +27,9 @@ public class PlayerFactory
 			p = new Human(c);
 		return p;
 	}
-	public String prendiNome() throws IOException {
+
+	public String prendiNome() throws IOException
+	{
 		System.out.println("Inserisci il tuo nome: ");
 		return input.readLine();
 	}

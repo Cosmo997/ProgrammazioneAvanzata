@@ -1,9 +1,12 @@
 package it.unicam.cs.pa.mastermind2019;
+
 /**
- * <b>Responsabilità</b>: creare il campo.
+ * <b>Responsabilità</b>: Creare il campo di battaglia.
  * 
  * @author TeamTrustMe
- *
+ * @param decodeArray Array da decodificare.
+ * @param codeArray   Tentativo corrente di codice.
+ * @param lunghezza   Lunghezza del codice da indovinare.
  */
 
 public class Campo
@@ -12,6 +15,11 @@ public class Campo
 	int[] codeArray;
 	int lunghezza;
 
+	/**
+	 * Costruttore con un oggetto di tipo {@link}GameParameters in ingresso.
+	 * 
+	 * @param settings
+	 */
 	public Campo(GameParameters settings )
 	{
 		this.lunghezza = settings.codeLenght;
