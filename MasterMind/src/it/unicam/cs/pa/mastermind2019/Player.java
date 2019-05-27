@@ -1,6 +1,7 @@
 package it.unicam.cs.pa.mastermind2019;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * <b>Responsabilità </b>: Gestire la strategia di un giocatore
@@ -24,7 +25,8 @@ public interface Player
 		 * @param settings
 		 * @return Un array di interi
 		 * @throws IOException 
+		 * @throws IllegalParameterException 
 		 */
-		public int[] generateCode(GameParameters settings) throws IOException;
+		public ArrayList<Integer> generateCode(GameParameters settings) throws IOException, IllegalParameterException;
 
 	}

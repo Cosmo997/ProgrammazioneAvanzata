@@ -32,7 +32,7 @@ public class MatchCoordinator
 		this.terreno = terreno;
 	}
 
-	public Risultato play() throws IOException
+	public Risultato play() throws IOException, IllegalParameterException
 	{
 		terreno.setDecodeArray(uno.generateCode(parameters));
 		Risultato esito;

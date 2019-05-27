@@ -1,5 +1,7 @@
 package it.unicam.cs.pa.mastermind2019;
 
+import java.util.ArrayList;
+
 /**
  * <b>Responsabilità</b>: Creare il campo di battaglia.
  * 
@@ -11,8 +13,8 @@ package it.unicam.cs.pa.mastermind2019;
 
 public class Campo
 {
-	int[] decodeArray;
-	int[] codeArray;
+	ArrayList<Integer> decodeArray;
+	ArrayList<Integer> codeArray;
 	int lunghezza;
 
 	/**
@@ -23,26 +25,26 @@ public class Campo
 	public Campo(GameParameters settings )
 	{
 		this.lunghezza = settings.codeLenght;
-		this.decodeArray = new int[lunghezza];
-		this.codeArray = new int[lunghezza];
+		this.decodeArray = new ArrayList<Integer>();
+		this.codeArray = new ArrayList<Integer>();
 	}
 
 	/*
 	 ****************** GETTERS ******************
 	 */
-	public int[] getArrayFromDeco()
+	public ArrayList<Integer> getArrayFromDeco()
 	{ return this.decodeArray; }
 
-	public int[] getArrayFromCode()
+	public ArrayList<Integer> getArrayFromCode()
 	{ return this.codeArray; }
 
 	/*
 	 ****************** SETTERS ******************
 	 */
-	public void setDecodeArray(int[] decodeArray)
-	{ this.decodeArray = decodeArray; }
+	public void setDecodeArray(ArrayList<Integer> arrayList)
+	{ this.decodeArray = arrayList; }
 
-	public void setCodeArray(int[] codeArray)
+	public void setCodeArray(ArrayList<Integer> codeArray)
 	{ this.codeArray = codeArray; }
 
 }

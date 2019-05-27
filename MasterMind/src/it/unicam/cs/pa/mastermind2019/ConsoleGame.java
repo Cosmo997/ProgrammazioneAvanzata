@@ -22,7 +22,7 @@ public class ConsoleGame
 	 */
 
 	private PrintStream output;
-	private BufferedReader input;
+	private static BufferedReader input;
 	private Player uno;
 	private Player due;
 
@@ -39,13 +39,13 @@ public class ConsoleGame
 		this.due = due;
 	}
 
-	public static void main(String argv[]) throws IOException
+	public static void main(String argv[]) throws IOException, IllegalParameterException
 	{
 //		Creo i due player
 		PlayerFactory player1 = new PlayerFactory();
 		PlayerFactory player2 = new PlayerFactory();
 //		 Creo un oggetto direttore
-		ConsoleGame direttore = new ConsoleGame(player1.getPlayer(player1.prendiNome()), player2.getPlayer(player2.prendiNome()));
+		ConsoleGame direttore = new ConsoleGame(player1.getPlayer(prendiNome()), player2.getPlayer(prendiNome()));
 //		Avvio il metodo start()
 		direttore.start();
 
@@ -55,8 +55,9 @@ public class ConsoleGame
 	 * Metodo iniziale dove prendiLunghezza()
 	 * 
 	 * @throws IOException
+	 * @throws IllegalParameterException 
 	 */
-	private void start() throws IOException
+	private void start() throws IOException, IllegalParameterException
 	{
 		do
 		{
@@ -132,4 +133,13 @@ public class ConsoleGame
 			output.println("Inserisci S o N!");
 		}
 	}
+	
+	//NON SAPPIAMO DOVE METTERLO.
+			private static String prendiNome() throws IOException
+			{
+				//BufferedReader input = null;
+				System.out.println("Inserisci il tuo nome: ");
+				return input.readLine();
+			}
+	
 }

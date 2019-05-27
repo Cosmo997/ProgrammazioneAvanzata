@@ -68,6 +68,17 @@ public class GameParameters
 		this.attempts = 9;
 		this.maxCodValue = 6;
 	}
+	
+	/**Controlla che il numero in input sia compreso nel range di numeri accettabili
+	 * nel contesto del gioco.
+	 * 
+	 * @param num Numero intero da controllare.
+	 * @return <b>True</b> Se il valore è accettabile.</br>
+	 * <b>False</b> Se il valore non è accettabile.
+	 */
+	 public boolean isValidNumber(int num) {
+	       return num >= this.minCodValue && num <= this.maxCodValue;
+	  }
 
 	public int getCodeLenght()
 	{ return codeLenght; }

@@ -1,5 +1,6 @@
 package it.unicam.cs.pa.mastermind2019;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -9,8 +10,7 @@ import java.util.Random;
  * @param ID Identificatore del bot
  */
 
-public class Bot implements Player
-{
+public class Bot implements Player {
 
 	public String ID;
 
@@ -18,29 +18,19 @@ public class Bot implements Player
 	 * Costruttore con una stringa in ingresso, assegna alla variabile
 	 * <code>ID </code> il valore della stringa in ingresso.
 	 * 
-	 * @param name Identificatore dell'oggetto.
+	 * @param id Identificatore dell'oggetto.
 	 */
-	public Bot(String name )
-	{
-		this.ID = name;
+	public Bot(String id) {
+		this.ID = id;
 	}
 
 	/**
 	 * Costruttore senza parametri in ingresso, il nome di default di un bot è
 	 * "BOT".
 	 */
-	public Bot()
-	{
-		this.nome = "BOT";
+	public Bot() {
+		this.ID = "BOT";
 	}
-
-	/**
-	 * Getter di <code>ID </code>.
-	 * 
-	 * @return L'ID dell'oggetto corrente
-	 */
-
-	public String nome;
 
 	/**
 	 * Metodo che genera un codice random per il bot
@@ -49,22 +39,31 @@ public class Bot implements Player
 	 * @return Array da decodificare o array da controllare
 	 * 
 	 **/
-	public int[] generateCode(GameParameters settings)
-	{
-		int[] appArray = new int[settings.codeLenght];
+	public ArrayList<Integer> generateCode(GameParameters settings) {
+		ArrayList<Integer> code = new ArrayList<Integer>();
 
-		for (int i = 0; i < settings.codeLenght; i++)
-		{
+		while (!(code.size() == settings.codeLenght)) {
 			Random random = new Random();
 			int n = settings.maxCodValue - settings.minCodValue;
 			int k = random.nextInt(n) + settings.minCodValue;// Valori compresi tra 1 e maxCodValue
-			appArray[i] = k;
+			if (!settings.duplicateAllow)
+				while (code.contains(k)) {
+					k = random.nextInt(n) + settings.minCodValue;
+				}
+			code.add(k);
 		}
-		return appArray;
+		return code;
 	}
 
+	/**
+	 * Getter di <code>ID </code>.
+	 * 
+	 * @return L'ID dell'oggetto corrente
+	 */
+
 	@Override
-	public String getID()
-	{ return nome; }
+	public String getID() {
+		return ID;
+	}
 
 }
