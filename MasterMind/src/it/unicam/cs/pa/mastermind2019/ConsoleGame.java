@@ -21,8 +21,6 @@ public class ConsoleGame
 	 * @param due    Secondo {@link}Player della partita.
 	 */
 
-	private PrintStream output;
-	private static BufferedReader input;
 	private Player uno;
 	private Player due;
 
@@ -48,6 +46,7 @@ public class ConsoleGame
 		ConsoleGame direttore = new ConsoleGame(player1.getPlayer(prendiNome()), player2.getPlayer(prendiNome()));
 //		Avvio il metodo start()
 		direttore.start();
+		
 
 	}
 
@@ -55,7 +54,7 @@ public class ConsoleGame
 	 * Metodo iniziale dove prendiLunghezza()
 	 * 
 	 * @throws IOException
-	 * @throws IllegalParameterException 
+	 * @throws IllegalParameterException
 	 */
 	private void start() throws IOException, IllegalParameterException
 	{
@@ -73,7 +72,7 @@ public class ConsoleGame
 	}
 
 	/**
-	 * ffff
+	 * 
 	 * 
 	 * @return
 	 * @throws IOException
@@ -82,15 +81,15 @@ public class ConsoleGame
 	{
 		while (true)
 		{
-			output.println("Inserisci la lunghezza del codice da decifrare fra 4, 6 e 8 numeri: ");
-			String s = input.readLine();
+			System.out.println("Inserisci la lunghezza del codice da decifrare fra 4, 6 e 8 numeri: ");
+			String s = Input.readLine();
 			if (s.equals("4") || s.equals("6") || s.equals("8"))
 			{
-				output.println("Il codice da decifrare è lungo: " +
+				System.out.println("Il codice da decifrare è lungo: " +
 								s);
 				return Integer.parseInt(s);
 			}
-			output.println("Insersci il numero 4, 6 o 8!");
+			System.out.println("Insersci il numero 4, 6 o 8!");
 		}
 	}
 
@@ -98,19 +97,19 @@ public class ConsoleGame
 	{
 		while (true)
 		{
-			output.println("Vuoi duplicati nel codice?: (S/N)");
-			String s = input.readLine();
+			System.out.println("Vuoi duplicati nel codice?: (S/N)");
+			String s = Input.readLine();
 			if (s.equals("N"))
 			{
-				output.println("Non ci saranno duplicati");
+				System.out.println("Non ci saranno duplicati");
 				return false;
 			}
 			if (s.equals("S"))
 			{
-				output.println("Il codice potrà contenere duplicati");
+				System.out.println("Il codice potrà contenere duplicati");
 				return true;
 			}
-			output.println("Inserisci S o N!");
+			System.out.println("Inserisci S o N!");
 		}
 	}
 
@@ -118,28 +117,30 @@ public class ConsoleGame
 	{
 		while (true)
 		{
-			output.println("Try again? (S/N)");
-			String str = input.readLine();
+			System.out.println("Try again? (S/N)");
+			String str = Input.readLine();
 			if (str.equals("N"))
 			{
-				output.println("Ciao chicco");
+				System.out.println("Ciao chicco");
 				return false;
 			}
 			if (str.equals("S"))
 			{
-				output.println("Daje");
+				System.out.println("Daje");
 				return true;
 			}
-			output.println("Inserisci S o N!");
+			System.out.println("Inserisci S o N!");
 		}
 	}
-	
-	//NON SAPPIAMO DOVE METTERLO.
-			private static String prendiNome() throws IOException
-			{
-				//BufferedReader input = null;
-				System.out.println("Inserisci il tuo nome: ");
-				return input.readLine();
-			}
-	
+
+	// NON SAPPIAMO DOVE METTERLO.
+	private static String prendiNome() throws IOException
+	{
+		System.out.println("Inserisci il tuo nome: ");
+		String ciao = Input.readLine();
+		if (ciao == null)
+			System.out.println("ffff");
+		return ciao;
+	}
+
 }
