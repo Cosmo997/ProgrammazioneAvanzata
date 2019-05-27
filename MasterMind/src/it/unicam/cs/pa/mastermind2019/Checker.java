@@ -45,41 +45,38 @@ public class Checker
 	 * 
 	 * @param risultato Array da decifrare.
 	 * @param tentativo Tentativo del giocatore.
-	 * @return ArrayList di {@link}Pioli
+	 * @return ArrayList di Pioli
 	 * 
 	 */
-	public ArrayList<Enum<Pioli>> check(int[] risultato,
-										int[] tentativo)
+	public ArrayList<Pioli> check(ArrayList<Integer> risultato,
+										ArrayList<Integer> indovina)
 	{
-		ArrayList<Enum<Pioli>> checkResult = new ArrayList<Enum<Pioli>>(settings.getCodeLenght());
-		int app1 = 0;
-		int app2 = 0;
-		for (int i = 0; i < settings.getCodeLenght(); i++)
+		ArrayList<Pioli> checkResult = new ArrayList<Pioli>();
+		int rightNumRightPlace = 0;
+		int rightNumWrongPlace = 0;
+
+		for (Integer arr : indovina)
 		{
-			if (risultato[i] == tentativo[i])
+			if (risultato.contains(arr))
 			{
-				checkResult.add(Pioli.SIMBOLIPOSIZIONI);
-				app1++;
-			}
-		}
-		if (app1 == settings.codeLenght)
-			return checkResult;
-		for (int i = 0; i < settings.codeLenght; i++)
-		{
-			for (int k = 0; k < settings.codeLenght; k++)
-			{
-				if (risultato[i] == tentativo[k])
+				if (risultato.indexOf(arr) == indovina.indexOf(arr))
 				{
-					app2++;
+					rightNumRightPlace++;
 				}
+				else
+					rightNumWrongPlace++;
 			}
 		}
-		for (int x = 0; x < (app2 - app1); x++)
+		for (int i = 0; i < rightNumRightPlace; i++)
+		{
+			checkResult.add(Pioli.SIMBOLIPOSIZIONI);
+		}
+		for (int i = 0; i < rightNumWrongPlace; i++)
 		{
 			checkResult.add(Pioli.SIMBOLI);
 		}
-		return checkResult;
 
+		return checkResult;
 	}
 
 	/**
@@ -91,8 +88,7 @@ public class Checker
 	 *         <b>False</b> Se l'{@link}ArrayList non è vincente
 	 */
 	public static boolean isWinner(ArrayList<Pioli> tentativo)
-	{
-		int count = 0;
+	{int count = 0;
 		for (Pioli c : tentativo)
 		{
 			if (c.equals(Pioli.SIMBOLIPOSIZIONI))

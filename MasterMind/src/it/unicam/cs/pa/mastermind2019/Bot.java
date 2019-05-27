@@ -52,6 +52,7 @@ public class Bot implements Player {
 				}
 			code.add(k);
 		}
+		System.out.println(code);
 		return code;
 	}
 
