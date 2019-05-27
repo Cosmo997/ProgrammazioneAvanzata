@@ -36,9 +36,11 @@ public class MatchCoordinator
 	{
 		terreno.setDecodeArray(uno.generateCode(parameters));
 		Risultato esito;
+		Checker claudio = new Checker(parameters, terreno);
 		do
 		{
-			if (Checker.isWinner(null))
+			
+			if (Checker.isWinner(claudio.check(terreno.decodeArray, due.generateCode(parameters) )))
 			{
 				return esito = new Vincitore(this.due.getID());
 			}
