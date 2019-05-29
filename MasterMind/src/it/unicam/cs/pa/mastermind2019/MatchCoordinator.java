@@ -12,41 +12,35 @@ import java.io.IOException;
  * @param soluzione  Codice da decriptare
  */
 
-public class MatchCoordinator
-{
-	private Player uno;
-	private Player due;
+public class MatchCoordinator {
+	private Player p1;
+	private Player p2;
 	private GameParameters parameters;
 	private int turn;
-	private Campo terreno;
+	private Campo campo;
 
-	public MatchCoordinator(GameParameters parametri,
-							Campo terreno,
-							Player uno,
-							Player due )
-	{
+	public MatchCoordinator(GameParameters parametri, Campo campo, Player uno, Player due) {
 		this.parameters = parametri;
-		this.uno = uno;
-		this.due = due;
+		this.p1 = uno;
+		this.p2 = due;
 		this.turn = 0;
-		this.terreno = terreno;
+		this.campo = campo;
 	}
 
-	public Risultato play() throws IOException, IllegalParameterException
-	{
-		terreno.setDecodeArray(uno.generateCode(parameters));
+	public Risultato play() throws IOException, IllegalParameterException {
+		campo.setDecodeArray(p1.generateCode(parameters));
 		Risultato esito;
-		Checker claudio = new Checker(parameters, terreno);
-		do
-		{
-			
-			if (Checker.isWinner(claudio.check(terreno.decodeArray, due.generateCode(parameters) )))
-			{
-				return esito = new Vincitore(this.due.getID());
+		Checker checker = new Checker(parameters, campo);
+		do {
+			if (Checker.isWinner(checker.check(campo.decodeArray, p2.generateCode(parameters)))) {
+				esito = new Vincitore(this.p2.getID());
+				return esito;
 			}
-		}
-		while (turn < parameters.attempts);
-		return esito = new Perdente(this.uno.getID());
+			//Stampare array di suggerimento
+			System.out.println("Array di suggerimento: " +checker.check(campo.decodeArray, p2.generateCode(parameters)));
+			this.turn++;
+		} while (turn < parameters.attempts);
+		return esito = new Perdente(this.p1.getID());
 	}
 
 }

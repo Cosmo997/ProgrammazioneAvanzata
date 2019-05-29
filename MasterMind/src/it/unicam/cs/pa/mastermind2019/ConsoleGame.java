@@ -9,30 +9,27 @@ import java.io.IOException;
  *
  */
 
-public class ConsoleGame
-{
+public class ConsoleGame {
 
 	/**
-	 * @param output Stringa in output.
-	 * @param input  Stringa in input.
-	 * @param uno    Primo {@link}Player della partita,
-	 * @param due    Secondo {@link}Player della partita.
+	 * @param output     Stringa in output.
+	 * @param input      Stringa in input.
+	 * @param giocatore1 Primo {@link}Player della partita,
+	 * @param giocatore2 Secondo {@link}Player della partita.
 	 */
 
-	private Player uno;
-	private Player due;
+	private Player giocatore1;
+	private Player giocatore2;
 
 	/**
 	 * Costruttore di ConsoleGame
 	 * 
-	 * @param uno Primo giocatore della partita.
-	 * @param due Secondo giocatore della partita.
+	 * @param p1 Primo giocatore della partita.
+	 * @param p2 Secondo giocatore della partita.
 	 */
-	public ConsoleGame(	Player uno,
-						Player due )
-	{
-		this.uno = uno;
-		this.due = due;
+	public ConsoleGame(Player p1, Player p2) {
+		this.giocatore1 = p1;
+		this.giocatore2 = p2;
 	}
 
 	/**
@@ -41,23 +38,19 @@ public class ConsoleGame
 	 * @throws IOException
 	 * @throws IllegalParameterException
 	 */
-	private void start() throws IOException, IllegalParameterException
-	{
-		do
-		{
+	private void start() throws IOException, IllegalParameterException {
+		do {
 			GameParameters settings = new GameParameters(Input.prendiLunghezza(), Input.prendiDuplicati());
 			Campo terreno = new Campo(settings);
-			MatchCoordinator mc = new MatchCoordinator(settings, terreno, this.uno, this.due);
-			System.out.println(mc.play());
-		}
-		while (Input.matchAgain());
+			MatchCoordinator arbitro = new MatchCoordinator(settings, terreno, this.giocatore1, this.giocatore2);
+			arbitro.play();
+		} while (Input.matchAgain());
 	}
 
-	public static void main(String argv[]) throws IOException, IllegalParameterException
-	{
+	public static void main(String argv[]) throws IOException, IllegalParameterException {
 		PlayerFactory player1 = new PlayerFactory();
 		PlayerFactory player2 = new PlayerFactory();
-		ConsoleGame direttore = new ConsoleGame(player1.getPlayer(Input.prendiNome()), player2.getPlayer(Input.prendiNome()));
+		ConsoleGame direttore = new ConsoleGame(player1.getPlayer(Input.typePlayer()),player2.getPlayer(Input.typePlayer()));
 		direttore.start();
 	}
 }

@@ -131,13 +131,18 @@ public class Input
 		}
 	}
 
-	public static String prendiNome() throws IOException
+	public static String typePlayer() throws IOException
 	{
-		System.out.println("Inserisci il tuo nome: ");
-		String ciao = Input.readLine();
-		if (ciao == null)
-			System.out.println("ffff");
-		return ciao;
+		System.out.println("Inserisci il tipo di giocatore: 'Bot' o 'Umano' ");
+		String c = Input.readLine();
+		if (c == null)
+			System.out.println("Inserisci tipo di giocatore: 'Bot' o 'Umano' ");
+		return c;
+	}
+	
+	public static void getNum(int num)
+	{
+		System.out.println("Numero inserito: " +num);
 	}
 
 }

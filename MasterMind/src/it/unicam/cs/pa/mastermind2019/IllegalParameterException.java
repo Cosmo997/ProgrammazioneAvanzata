@@ -8,7 +8,7 @@ public class IllegalParameterException extends Exception
 {
 
 	public IllegalParameterException() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**

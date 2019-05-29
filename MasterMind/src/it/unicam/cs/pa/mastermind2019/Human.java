@@ -59,7 +59,7 @@ public class Human implements Player
 					throw new IllegalParameterException();
 				else
 					code.add(c);
-					System.out.println("Numero " +c+ " inserito");
+					Input.getNum(c);
 				}
 				return code;
 			}

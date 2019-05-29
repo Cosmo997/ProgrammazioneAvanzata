@@ -14,8 +14,7 @@ import java.io.IOException;
  * @param maxCodValue    Numero massimo di caratteri del codice
  */
 
-public class GameParameters
-{
+public class GameParameters {
 	final boolean duplicateAllow;
 	final int codeLenght;
 	int attempts;
@@ -33,24 +32,17 @@ public class GameParameters
 	 * 
 	 */
 
-	public GameParameters(	int lunghezza,
-							boolean duplicate ) throws IOException
-	{
+	public GameParameters(int lunghezza, boolean duplicate) throws IOException {
 		this.codeLenght = lunghezza;
 		this.duplicateAllow = duplicate;
 
-		if (codeLenght == 4)
-		{
+		if (codeLenght == 4) {
 			this.attempts = 9;
 			this.maxCodValue = 6;
-		}
-		else if (codeLenght == 6)
-		{
+		} else if (codeLenght == 6) {
 			this.attempts = 15;
 			this.maxCodValue = 8;
-		}
-		else if (codeLenght == 8)
-		{
+		} else if (codeLenght == 8) {
 			this.attempts = 21;
 			this.maxCodValue = 10;
 		}
@@ -61,29 +53,31 @@ public class GameParameters
 	 * impostazioni standard
 	 */
 
-	public GameParameters()
-	{
+	public GameParameters() {
 		this.codeLenght = 4;
 		this.duplicateAllow = false;
 		this.attempts = 9;
 		this.maxCodValue = 6;
 	}
-	
-	/**Controlla che il numero in input sia compreso nel range di numeri accettabili
+
+	/**
+	 * Controlla che il numero in input sia compreso nel range di numeri accettabili
 	 * nel contesto del gioco.
 	 * 
 	 * @param num Numero intero da controllare.
 	 * @return <b>True</b> Se il valore è accettabile.</br>
-	 * <b>False</b> Se il valore non è accettabile.
+	 *         <b>False</b> Se il valore non è accettabile.
 	 */
-	 public boolean isValidNumber(int num) {
-	       return num >= this.minCodValue && num <= this.maxCodValue;
-	  }
+	public boolean isValidNumber(int num) {
+		return num >= this.minCodValue && num <= this.maxCodValue;
+	}
 
-	public int getCodeLenght()
-	{ return codeLenght; }
+	public int getCodeLenght() {
+		return codeLenght;
+	}
 
-	public int getAttempts()
-	{ return attempts; }
+	public int getAttempts() {
+		return attempts;
+	}
 
 }
