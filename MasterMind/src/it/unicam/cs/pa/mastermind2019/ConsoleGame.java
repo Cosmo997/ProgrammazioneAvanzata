@@ -40,17 +40,17 @@ public class ConsoleGame {
 	 */
 	private void start() throws IOException, IllegalParameterException {
 		do {
-			GameParameters settings = new GameParameters(Input.prendiLunghezza(), Input.prendiDuplicati());
+			GameParameters settings = new GameParameters(InputOutput.prendiLunghezza(), InputOutput.prendiDuplicati());
 			Campo terreno = new Campo(settings);
 			MatchCoordinator arbitro = new MatchCoordinator(settings, terreno, this.giocatore1, this.giocatore2);
 			arbitro.play();
-		} while (Input.matchAgain());
+		} while (InputOutput.matchAgain());
 	}
 
 	public static void main(String argv[]) throws IOException, IllegalParameterException {
 		PlayerFactory player1 = new PlayerFactory();
 		PlayerFactory player2 = new PlayerFactory();
-		ConsoleGame direttore = new ConsoleGame(player1.getPlayer(Input.typePlayer()),player2.getPlayer(Input.typePlayer()));
+		ConsoleGame direttore = new ConsoleGame(player1.getPlayer(InputOutput.typePlayer()),player2.getPlayer(InputOutput.typePlayer()));
 		direttore.start();
 	}
 }

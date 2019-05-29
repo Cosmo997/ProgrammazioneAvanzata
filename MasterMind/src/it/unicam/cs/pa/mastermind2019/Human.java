@@ -54,12 +54,12 @@ public class Human implements Player
 				ArrayList<Integer> code = new ArrayList<Integer>();
 				while(!(code.size() == settings.codeLenght)){
 				System.out.println("Inserisci un numero compreso tra " +settings.minCodValue+ " e " +settings.maxCodValue);
-				c = Input.readInt();
+				c = InputOutput.readInt();
 				if(!settings.isValidNumber(c))
 					throw new IllegalParameterException();
 				else
 					code.add(c);
-					Input.getNum(c);
+					InputOutput.getNum(c);
 				}
 				return code;
 			}

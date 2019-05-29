@@ -5,11 +5,11 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 
 /**
- * <b>Responsabilità:</b> Leggere stringhe e numeri dallo standard input.</br>
+ * <b>Responsabilità:</b> Interfacciarsi con l'utente </br>
  * <b>Fonte:</b>{@link http://pages.di.unipi.it/corradini/Didattica/LIP-07/Tipi-Input/Input/main.html}
  */
 
-public class Input
+public class InputOutput
 {
 
 	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -80,7 +80,7 @@ public class Input
 		while (true)
 		{
 			System.out.println("Inserisci la lunghezza del codice da decifrare fra 4, 6 e 8 numeri: ");
-			String s = Input.readLine();
+			String s = InputOutput.readLine();
 			if (s.equals("4") || s.equals("6") || s.equals("8"))
 			{
 				System.out.println("Il codice da decifrare è lungo: " +
@@ -96,7 +96,7 @@ public class Input
 		while (true)
 		{
 			System.out.println("Vuoi duplicati nel codice?: (S/N)");
-			String s = Input.readLine();
+			String s = InputOutput.readLine();
 			if (s.equals("N"))
 			{
 				System.out.println("Non ci saranno duplicati");
@@ -116,7 +116,7 @@ public class Input
 		while (true)
 		{
 			System.out.println("Try again? (S/N)");
-			String str = Input.readLine();
+			String str = InputOutput.readLine();
 			if (str.equals("N"))
 			{
 				System.out.println("Ciao chicco");
@@ -134,7 +134,7 @@ public class Input
 	public static String typePlayer() throws IOException
 	{
 		System.out.println("Inserisci il tipo di giocatore: 'Bot' o 'Umano' ");
-		String c = Input.readLine();
+		String c = InputOutput.readLine();
 		if (c == null)
 			System.out.println("Inserisci tipo di giocatore: 'Bot' o 'Umano' ");
 		return c;
