@@ -49,6 +49,7 @@ public class ConsoleGame {
 			Campo terreno = new Campo(settings);
 			MatchCoordinator arbitro = new MatchCoordinator(settings, terreno, this.giocatore1, this.giocatore2);
 			System.out.println(arbitro.play());
+			arbitro.play();
 		} while (InputOutput.matchAgain());
 	}
 
