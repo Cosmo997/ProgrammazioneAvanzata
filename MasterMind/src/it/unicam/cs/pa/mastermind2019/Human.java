@@ -53,13 +53,14 @@ public class Human implements Player
 				int c;
 				ArrayList<Integer> code = new ArrayList<Integer>();
 				while(!(code.size() == settings.codeLenght)){
-				System.out.println("Inserisci un numero compreso tra " +settings.minCodValue+ " e " +settings.maxCodValue);
-				c = Input.readInt();
+				c = InputOutput.getC(settings.maxCodValue);
 				if(!settings.isValidNumber(c))
 					throw new IllegalParameterException();
 				else
+					if(!(settings.duplicateAllow) && code.contains(c))
+						throw new IllegalParameterException();
 					code.add(c);
-					Input.getNum(c);
+					InputOutput.getNum(c);
 				}
 				return code;
 			}

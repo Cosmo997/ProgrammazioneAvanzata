@@ -15,17 +15,11 @@ public class Perdente implements Risultato
 		this.loserId = winnerId;
 	}
 
-	/**
-	 * @return the winnerId
-	 */
-	public String getWinnerId()
-	{ return loserId; }
-
 	@Override
 	public String toString()
 	{
 		return "Il giocatore " +
 				loserId +
-				" ha vinto!";
+				" ha perso!";
 	}
 }

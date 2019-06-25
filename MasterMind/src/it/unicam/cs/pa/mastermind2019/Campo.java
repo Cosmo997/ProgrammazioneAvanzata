@@ -13,8 +13,8 @@ import java.util.ArrayList;
 
 public class Campo
 {
-	ArrayList<Integer> decodeArray;
-	ArrayList<Integer> codeArray;
+	private ArrayList<Integer> decodeArray;
+	private ArrayList<Integer> codeArray;
 	int lunghezza;
 
 	/**
