@@ -26,10 +26,10 @@ public class Bot implements Player {
 
 	/**
 	 * Costruttore senza parametri in ingresso, il nome di default di un bot è
-	 * "BOT".
+	 * "Bot".
 	 */
 	public Bot() {
-		this.ID = "BOT";
+		this.ID = "Bot";
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class Bot implements Player {
 		while (!(code.size() == settings.codeLenght)) {
 			Random random = new Random();
 			int n = settings.maxCodValue - settings.minCodValue;
-			int k = random.nextInt(n) + settings.minCodValue;// Valori compresi tra 1 e maxCodValue
+			int k = random.nextInt(n) + settings.minCodValue;
 			if (!settings.duplicateAllow)
 				while (code.contains(k)) {
 					k = random.nextInt(n) + settings.minCodValue;

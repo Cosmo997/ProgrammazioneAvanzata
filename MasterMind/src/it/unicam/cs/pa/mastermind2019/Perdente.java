@@ -10,9 +10,9 @@ public class Perdente implements Risultato
 {
 	private final String loserId;
 
-	public Perdente(String winnerId )
+	public Perdente(String ID )
 	{
-		this.loserId = winnerId;
+		this.loserId = ID;
 	}
 
 	@Override
@@ -22,4 +22,8 @@ public class Perdente implements Risultato
 				loserId +
 				" ha perso!";
 	}
+
+	@Override
+	public String getID()
+	{ return loserId; }
 }

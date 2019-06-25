@@ -1,6 +1,5 @@
 package it.unicam.cs.pa.mastermind2019;
 
-
 /**
  * <b>Responsabilità </b>: Creare il giocatore adatto alla richiesta
  * 
@@ -9,18 +8,24 @@ package it.unicam.cs.pa.mastermind2019;
  */
 public class PlayerFactory
 {
-
+	/**
+	 * Costruttore vuoto
+	 */
 	public PlayerFactory() {}
 
+	/**
+	 * Metodo che consente di creare un player data una stringa iniziale
+	 * 
+	 * @param c Parametro che inciderà sulla creazione del player
+	 * @return Il player desiderato
+	 */
 	public Player getPlayer(String c)
 	{
 		Player p;
 		if (c.equals("Bot"))
-			p = new Bot(c);
+			p = new Bot();
 		else
 			p = new Human(c);
 		return p;
 	}
-	
-	
 }

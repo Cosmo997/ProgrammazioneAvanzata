@@ -1,11 +1,10 @@
 package it.unicam.cs.pa.mastermind2019;
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
  * <b>Responsabilità </b>: Creare un human
  * @author TeamTrustMe
+ * @param ID Stringa che identifica un Player Human
  *
  */
 
@@ -13,27 +12,20 @@ public class Human implements Player
 	{
 
 		public String ID;
-		BufferedReader codice;
 		
 		/**
-		 *  Metodo costruttore di Human
+		 *  Metodo costruttore di default di Human
 		 */
-		public Human()
-		{
-			this.ID = "Franco";
-		}
+		public Human(){this.ID = "DefaultID";}
 	
+		
 		/**
 		 * Costruttore Human con una stringa in ingresso, assegna alla variabile
 		 * <code>ID </code> il valore della stringa in ingresso.
 		 * 
 		 * @param id Identificatore dell'oggetto.
 		 */
-		
-		public Human(String id)
-			{
-				this.ID = id;
-			}
+		public Human(String id){this.ID = id;}
 
 		@Override
 		public String getID()
@@ -50,7 +42,7 @@ public class Human implements Player
 		 * @throws IllegalParameterException 
 		 */
 
-		public ArrayList<Integer> generateCode(GameParameters settings) throws IOException, IllegalParameterException
+		public ArrayList<Integer> generateCode(GameParameters settings) throws IllegalParameterException
 			{
 				int c;
 				ArrayList<Integer> code = new ArrayList<Integer>();
@@ -62,7 +54,7 @@ public class Human implements Player
 					if(!(settings.duplicateAllow) && code.contains(c))
 						throw new IllegalParameterException();
 					code.add(c);
-					InputOutput.getNum(c);
+					InputOutput.printNumber(c);
 				}
 				return code;
 			}

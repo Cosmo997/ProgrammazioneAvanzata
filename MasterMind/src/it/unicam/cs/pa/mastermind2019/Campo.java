@@ -11,17 +11,19 @@ import java.util.ArrayList;
  * @param lunghezza   Lunghezza del codice da indovinare.
  */
 
-public class Campo {
+public class Campo
+{
 	private ArrayList<Integer> decodeArray;
 	private ArrayList<Integer> codeArray;
 	int lunghezza;
 
 	/**
-	 * Costruttore con un oggetto di tipo {@link}GameParameters in ingresso.
+	 * Costruttore con un oggetto di tipo GameParameters in ingresso.
 	 * 
 	 * @param settings
 	 */
-	public Campo(GameParameters settings) {
+	public Campo(GameParameters settings )
+	{
 		this.lunghezza = settings.codeLenght;
 		this.decodeArray = new ArrayList<Integer>();
 		this.codeArray = new ArrayList<Integer>();
@@ -34,18 +36,16 @@ public class Campo {
 	 * 
 	 * @return Array da decodificare
 	 */
-	public ArrayList<Integer> getArrayFromDeco() {
-		return this.decodeArray;
-	}
+	public ArrayList<Integer> getArrayFromDeco()
+	{ return this.decodeArray; }
 
 	/**
 	 * 
 	 * @return Array tentativo
 	 */
 
-	public ArrayList<Integer> getArrayFromCode() {
-		return this.codeArray;
-	}
+	public ArrayList<Integer> getArrayFromCode()
+	{ return this.codeArray; }
 
 	/*
 	 ****************** SETTERS ******************
@@ -55,17 +55,15 @@ public class Campo {
 	 * 
 	 * @param arrayList
 	 */
-	public void setDecodeArray(ArrayList<Integer> arrayList) {
-		this.decodeArray = arrayList;
-	}
+	public void setDecodeArray(ArrayList<Integer> arrayList)
+	{ this.decodeArray = arrayList; }
 
 	/**
 	 * Metodo per settare l'array codificatore
 	 * 
 	 * @param codeArray
 	 */
-	public void setCodeArray(ArrayList<Integer> codeArray) {
-		this.codeArray = codeArray;
-	}
+	public void setCodeArray(ArrayList<Integer> codeArray)
+	{ this.codeArray = codeArray; }
 
 }

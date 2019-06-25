@@ -9,7 +9,8 @@ import java.io.IOException;
  *
  */
 
-public class ConsoleGame {
+public class ConsoleGame
+{
 
 	/**
 	 * @param output     Stringa in output.
@@ -27,7 +28,9 @@ public class ConsoleGame {
 	 * @param p1 Primo giocatore della partita.
 	 * @param p2 Secondo giocatore della partita.
 	 */
-	public ConsoleGame(Player p1, Player p2) {
+	public ConsoleGame(	Player p1,
+						Player p2 )
+	{
 		this.giocatore1 = p1;
 		this.giocatore2 = p2;
 	}
@@ -42,14 +45,17 @@ public class ConsoleGame {
 	 * @throws IOException
 	 * @throws IllegalParameterException
 	 */
-	private void start() throws IOException, IllegalParameterException {
-		do {
+	private void start() throws IOException, IllegalParameterException
+	{
+		do
+		{
 			GameParameters settings = new GameParameters(InputOutput.prendiLunghezza(), InputOutput.prendiDuplicati());
 			Campo terreno = new Campo(settings);
 			MatchCoordinator arbitro = new MatchCoordinator(settings, terreno, this.giocatore1, this.giocatore2);
 			System.out.println(arbitro.play());
 			arbitro.play();
-		} while (InputOutput.matchAgain());
+		}
+		while (InputOutput.matchAgain());
 	}
 
 	/**
@@ -60,11 +66,11 @@ public class ConsoleGame {
 	 * @throws IllegalParameterException
 	 */
 
-	public static void main(String argv[]) throws IOException, IllegalParameterException {
+	public static void main(String argv[]) throws IOException, IllegalParameterException
+	{
 		PlayerFactory player1 = new PlayerFactory();
 		PlayerFactory player2 = new PlayerFactory();
-		ConsoleGame direttore = new ConsoleGame(player1.getPlayer(InputOutput.typePlayer()),
-				player2.getPlayer(InputOutput.typePlayer()));
+		ConsoleGame direttore = new ConsoleGame(player1.getPlayer(InputOutput.typePlayer()), player2.getPlayer(InputOutput.typePlayer()));
 		direttore.start();
 	}
 }

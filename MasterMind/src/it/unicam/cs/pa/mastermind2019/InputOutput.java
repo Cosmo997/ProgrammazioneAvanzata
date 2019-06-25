@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.io.IOException;
 
 /**
- * <b>Responsabilità:</b> Leggere stringhe e numeri dallo standard input.</br>
- * <b>Fonte:</b>{@link http://pages.di.unipi.it/corradini/Didattica/LIP-07/Tipi-Input/Input/main.html}
+ * <b>Responsabilità:</b> Interfacciarsi con l'utente.</br>
+ * <b>Fonte:</b>
+ * http://pages.di.unipi.it/corradini/Didattica/LIP-07/Tipi-Input/Input/main.html
  */
 
 public class InputOutput
@@ -76,6 +77,12 @@ public class InputOutput
 		return c;
 	}
 
+	/**
+	 * Metodo che consente di prendere in input una lunghezza iniziale del codice
+	 * 
+	 * @return
+	 * @throws IOException
+	 */
 	public static int prendiLunghezza() throws IOException
 	{
 		while (true)
@@ -92,6 +99,12 @@ public class InputOutput
 		}
 	}
 
+	/**
+	 * Metodo che consente di prendere in input se avere o no duplicati nel codice
+	 * 
+	 * @return
+	 * @throws IOException
+	 */
 	public static boolean prendiDuplicati() throws IOException
 	{
 		while (true)
@@ -112,60 +125,94 @@ public class InputOutput
 		}
 	}
 
-	public static boolean matchAgain() throws IOException
+	/**
+	 * Metodo che restituisce true se il giocatore decide di giocare ancora,
+	 * altrimenti false
+	 * 
+	 * @return True Se il giocatore gioca ancora, altrimenti False.
+	 */
+	public static boolean matchAgain()
 	{
 		while (true)
 		{
-			System.out.println("Try again? (S/N)");
+			System.out.println("Giochi ancora? (S/N)");
 			String str = InputOutput.readLine();
 			if (str.equals("N"))
 			{
-				System.out.println("Ciao chicco");
+				System.out.println("Arrivederci");
 				return false;
 			}
 			if (str.equals("S"))
 			{
-				System.out.println("Daje");
+				System.out.println("Ricominciamo!");
 				return true;
 			}
 			System.out.println("Inserisci S o N!");
 		}
 	}
-/**
- * Prende i tipi di giocatore da tastiera
- * @return
- * @throws IOException
- */
-	public static String typePlayer() throws IOException
+
+	/**
+	 * Prende i tipi di giocatore da tastiera e li da come valore di ritorno in una
+	 * String
+	 * 
+	 * @return Tipo del giocatore
+	 */
+	public static String typePlayer()
 	{
-		System.out.println("Inserisci il tipo di giocatore: 'Bot' o 'Umano' ");
-		String c = InputOutput.readLine();
-		if (c == null)
-			System.out.println("Inserisci tipo di giocatore: 'Bot' o 'Umano' ");
-		return c;
+		while (true)
+		{
+			System.out.println("Inserisci il tipo di giocatore: 'Bot' o 'Umano' ");
+			String c = InputOutput.readLine();
+			if (c != null)
+				return c;
+			System.out.println("Tipo di giocatore non valido.");
+		}
 	}
-	
-	public static void getNum(int num)
+
+	/**
+	 * Stampa il numero in ingresso
+	 * 
+	 * @param num
+	 */
+	public static void printNumber(int num)
 	{
-		System.out.println("Numero inserito: " +num);
+		System.out.println("Numero inserito: " +
+							num);
 	}
-	
+
+	/**
+	 * Prende un numero e lo da come valore di ritorno
+	 * 
+	 * @param max Valore massimo
+	 * @return Il numero preso da tastiera
+	 */
 	public static int getC(int max)
 	{
-		System.out.println("Inserisci un numero compreso tra 1 e " +max);
+		System.out.println("Inserisci un numero compreso tra 1 e " +
+							max);
 		return InputOutput.readInt();
 	}
-	
+
+	/**
+	 * Stampa il numero in ingresso
+	 * 
+	 * @param num Tentativi rimasti
+	 */
 	public static void getAttempts(int num)
 	{
-		System.out.println("Tentativi rimasti: " +num);
+		System.out.println("Tentativi rimasti: " +
+							num);
 	}
-	
+
+	/**
+	 * Stampa l'ArrayList di suggerimento preso in input
+	 * 
+	 * @param sugg ArrayList di pioli suggerimento
+	 */
 	public static void getSuggerimento(ArrayList<Pioli> sugg)
 	{
-		System.out.println("Array di sugerimento: " +sugg);
+		System.out.println("Array di sugerimento: " +
+							sugg);
 	}
-	
-
 
 }
