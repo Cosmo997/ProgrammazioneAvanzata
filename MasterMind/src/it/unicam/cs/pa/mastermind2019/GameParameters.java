@@ -49,8 +49,7 @@ public class GameParameters {
 	}
 
 	/**
-	 * Costruttore di default che non prende parametri di ingresso e inserisce
-	 * impostazioni standard
+	 * Costruttore di default 
 	 */
 
 	public GameParameters() {

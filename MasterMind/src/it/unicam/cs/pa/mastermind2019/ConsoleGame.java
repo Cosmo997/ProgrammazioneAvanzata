@@ -3,7 +3,7 @@ package it.unicam.cs.pa.mastermind2019;
 import java.io.IOException;
 
 /**
- * <b>Responsabilità </b>: Far partire il gioco
+ * <b>Responsabilità </b>: Far partire il gioco (direttore)
  * 
  * @author TeamTrustMe
  *
@@ -43,7 +43,7 @@ public class ConsoleGame {
 			GameParameters settings = new GameParameters(Input.prendiLunghezza(), Input.prendiDuplicati());
 			Campo terreno = new Campo(settings);
 			MatchCoordinator arbitro = new MatchCoordinator(settings, terreno, this.giocatore1, this.giocatore2);
-			arbitro.play();
+			System.out.println(arbitro.play());
 		} while (Input.matchAgain());
 	}
 

@@ -1,45 +1,50 @@
 package it.unicam.cs.pa.mastermind2019;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * <b>Responsabilità</b>: gestire la partita
  * 
  * @author TeamTrustMe
- * @param players    Array contenente i riferimenti ai due giocatori.
+ * @param players    Giocatori
  * @param parameters Parametri usati nella partita
- * @param turn       Turno attuale
- * @param soluzione  Codice da decriptare
+ * @param tentativi  Tentativi eseguiti
+ * @param campo      Mettere il codice da decriptare nel campo
  */
 
 public class MatchCoordinator {
 	private Player p1;
 	private Player p2;
 	private GameParameters parameters;
-	private int turn;
+	private int tentativi;
 	private Campo campo;
+	private ArrayList<Pioli> suggerimento;
 
 	public MatchCoordinator(GameParameters parametri, Campo campo, Player uno, Player due) {
 		this.parameters = parametri;
 		this.p1 = uno;
 		this.p2 = due;
-		this.turn = 0;
+		this.tentativi = 0;
 		this.campo = campo;
 	}
 
 	public Risultato play() throws IOException, IllegalParameterException {
 		campo.setDecodeArray(p1.generateCode(parameters));
+		this.tentativi = parameters.attempts;
 		Risultato esito;
 		Checker checker = new Checker(parameters, campo);
 		do {
-			if (Checker.isWinner(checker.check(campo.decodeArray, p2.generateCode(parameters)))) {
+			suggerimento = new ArrayList<>(checker.check(campo.decodeArray, p2.generateCode(parameters)));
+			if (Checker.isWinner(suggerimento)) {
 				esito = new Vincitore(this.p2.getID());
 				return esito;
 			}
-			//Stampare array di suggerimento
-			System.out.println("Array di suggerimento: " +checker.check(campo.decodeArray, p2.generateCode(parameters)));
-			this.turn++;
-		} while (turn < parameters.attempts);
+			Input.getSuggerimento(suggerimento); // Array di suggerimento
+			this.tentativi--; // Tentativi rimasti
+			Input.getAttempts(this.tentativi);
+
+		} while (tentativi > 0);
 		return esito = new Perdente(this.p1.getID());
 	}
 

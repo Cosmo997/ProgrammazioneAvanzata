@@ -2,6 +2,7 @@ package it.unicam.cs.pa.mastermind2019;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.io.IOException;
 
 /**
@@ -130,7 +131,11 @@ public class Input
 			System.out.println("Inserisci S o N!");
 		}
 	}
-
+/**
+ * Prende i tipi di giocatore da tastiera
+ * @return
+ * @throws IOException
+ */
 	public static String typePlayer() throws IOException
 	{
 		System.out.println("Inserisci il tipo di giocatore: 'Bot' o 'Umano' ");
@@ -143,6 +148,16 @@ public class Input
 	public static void getNum(int num)
 	{
 		System.out.println("Numero inserito: " +num);
+	}
+	
+	public static void getAttempts(int num)
+	{
+		System.out.println("Tentativi rimasti: " +num);
+	}
+	
+	public static void getSuggerimento(ArrayList<Pioli> sugg)
+	{
+		System.out.println("Array di sugerimento: " +sugg);
 	}
 
 }

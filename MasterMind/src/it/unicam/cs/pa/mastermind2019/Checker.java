@@ -3,7 +3,7 @@ package it.unicam.cs.pa.mastermind2019;
 import java.util.ArrayList;
 
 /**
- * <b>Responsabilità </b>: Valutare gli array in input.
+ * <b>Responsabilità </b>: Valutare gli ArrayList in input e restituire il suggerimento o vincitore.
  * 
  * @author TeamTrustMe
  * @param settings Impostazioni della partita corrente.
