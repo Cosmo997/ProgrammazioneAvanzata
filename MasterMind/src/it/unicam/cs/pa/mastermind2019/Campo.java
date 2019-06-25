@@ -11,8 +11,7 @@ import java.util.ArrayList;
  * @param lunghezza   Lunghezza del codice da indovinare.
  */
 
-public class Campo
-{
+public class Campo {
 	private ArrayList<Integer> decodeArray;
 	private ArrayList<Integer> codeArray;
 	int lunghezza;
@@ -22,8 +21,7 @@ public class Campo
 	 * 
 	 * @param settings
 	 */
-	public Campo(GameParameters settings )
-	{
+	public Campo(GameParameters settings) {
 		this.lunghezza = settings.codeLenght;
 		this.decodeArray = new ArrayList<Integer>();
 		this.codeArray = new ArrayList<Integer>();
@@ -32,19 +30,42 @@ public class Campo
 	/*
 	 ****************** GETTERS ******************
 	 */
-	public ArrayList<Integer> getArrayFromDeco()
-	{ return this.decodeArray; }
+	/**
+	 * 
+	 * @return Array da decodificare
+	 */
+	public ArrayList<Integer> getArrayFromDeco() {
+		return this.decodeArray;
+	}
 
-	public ArrayList<Integer> getArrayFromCode()
-	{ return this.codeArray; }
+	/**
+	 * 
+	 * @return Array tentativo
+	 */
+
+	public ArrayList<Integer> getArrayFromCode() {
+		return this.codeArray;
+	}
 
 	/*
 	 ****************** SETTERS ******************
 	 */
-	public void setDecodeArray(ArrayList<Integer> arrayList)
-	{ this.decodeArray = arrayList; }
+	/**
+	 * Metodo per settare l'array da decodificare
+	 * 
+	 * @param arrayList
+	 */
+	public void setDecodeArray(ArrayList<Integer> arrayList) {
+		this.decodeArray = arrayList;
+	}
 
-	public void setCodeArray(ArrayList<Integer> codeArray)
-	{ this.codeArray = codeArray; }
+	/**
+	 * Metodo per settare l'array codificatore
+	 * 
+	 * @param codeArray
+	 */
+	public void setCodeArray(ArrayList<Integer> codeArray) {
+		this.codeArray = codeArray;
+	}
 
 }

@@ -35,10 +35,9 @@ public class ConsoleGame {
 	/**
 	 * Metodo iniziale
 	 * 
-	 * 1) Prendo i parametri di gioco
-	 * 2) Creo i 2 ArrayList in Campo in base ai parametri di gioco
-	 * 3) Creo Arbitro a cui passo, parametri, campo, e i 2 giocatori
-	 * 4) Faccio partire la partita e restituisco il risultato
+	 * 1) Prendo i parametri di gioco 2) Creo i 2 ArrayList in Campo in base ai
+	 * parametri di gioco 3) Creo Arbitro a cui passo, parametri, campo, e i 2
+	 * giocatori 4) Faccio partire la partita e restituisco il risultato
 	 * 
 	 * @throws IOException
 	 * @throws IllegalParameterException
@@ -53,10 +52,19 @@ public class ConsoleGame {
 		} while (InputOutput.matchAgain());
 	}
 
+	/**
+	 * Metodo Main
+	 * 
+	 * @param argv
+	 * @throws IOException
+	 * @throws IllegalParameterException
+	 */
+
 	public static void main(String argv[]) throws IOException, IllegalParameterException {
 		PlayerFactory player1 = new PlayerFactory();
 		PlayerFactory player2 = new PlayerFactory();
-		ConsoleGame direttore = new ConsoleGame(player1.getPlayer(InputOutput.typePlayer()),player2.getPlayer(InputOutput.typePlayer()));
+		ConsoleGame direttore = new ConsoleGame(player1.getPlayer(InputOutput.typePlayer()),
+				player2.getPlayer(InputOutput.typePlayer()));
 		direttore.start();
 	}
 }

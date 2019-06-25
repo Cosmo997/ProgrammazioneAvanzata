@@ -71,10 +71,18 @@ public class GameParameters {
 		return num >= this.minCodValue && num <= this.maxCodValue;
 	}
 
+	/**
+	 * Metodo che restituisce la lunghezze del codice da decodificare
+	 * @return lunghezza codice
+	 */
 	public int getCodeLenght() {
 		return codeLenght;
 	}
-
+	
+	/**
+	 * Metodo che restituisce i tentativi settati
+	 * @return tentativi impostati
+	 */
 	public int getAttempts() {
 		return attempts;
 	}

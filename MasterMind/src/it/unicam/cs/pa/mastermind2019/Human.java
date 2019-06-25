@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  * <b>Responsabilità </b>: Creare un human
- * @author Daniele
+ * @author TeamTrustMe
  *
  */
 
@@ -15,7 +15,9 @@ public class Human implements Player
 		public String ID;
 		BufferedReader codice;
 		
-		
+		/**
+		 *  Metodo costruttore di Human
+		 */
 		public Human()
 		{
 			this.ID = "Franco";
