@@ -8,12 +8,12 @@ package it.unicam.cs.pa.mastermind2019;
  * 
  * @param SIMBOLIPOSIZIONI Elemento che indica che un numero è corretto e si
  *                         trova nella posizione corretta.
- * @param SIMBOLI          Elemento che indica che un numero è corretto, ma non
+ * @param PE          Elemento che indica che un numero è corretto, ma non
  *                         nella posizione esatta.
  * @author TeamTrustMe
  *
  */
 public enum Pioli
 {
-	SIMBOLIPOSIZIONI, SIMBOLI,
+	PC, PE,
 }

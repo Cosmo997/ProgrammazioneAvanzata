@@ -22,7 +22,7 @@ public class PlayerFactory
 	public Player getPlayer(String c)
 	{
 		Player p;
-		if (c.equals("Bot"))
+		if (c.equalsIgnoreCase("bot"))
 			p = new Bot();
 		else
 			p = new Human(c);

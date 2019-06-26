@@ -68,6 +68,7 @@ public class ConsoleGame
 
 	public static void main(String argv[]) throws IOException, IllegalParameterException
 	{
+		InputOutput.stampaLogo();
 		PlayerFactory player1 = new PlayerFactory();
 		PlayerFactory player2 = new PlayerFactory();
 		ConsoleGame direttore = new ConsoleGame(player1.getPlayer(InputOutput.typePlayer()), player2.getPlayer(InputOutput.typePlayer()));

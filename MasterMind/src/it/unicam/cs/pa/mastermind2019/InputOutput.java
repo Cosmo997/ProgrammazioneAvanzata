@@ -11,8 +11,7 @@ import java.io.IOException;
  * http://pages.di.unipi.it/corradini/Didattica/LIP-07/Tipi-Input/Input/main.html
  */
 
-public class InputOutput
-{
+public class InputOutput {
 
 	private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -22,15 +21,11 @@ public class InputOutput
 	 * 
 	 * @return restituisce la linea di input che l'utente ha battuto.
 	 */
-	public static String readLine()
-	{
+	public static String readLine() {
 		String inputLine = "";
-		try
-		{
+		try {
 			inputLine = reader.readLine();
-		}
-		catch (IOException e)
-		{
+		} catch (IOException e) {
 			System.out.println(e);
 			System.exit(1);
 		}
@@ -43,8 +38,7 @@ public class InputOutput
 	 * 
 	 * @return l'intero dato in input dall'utente
 	 */
-	public static int readInt()
-	{
+	public static int readInt() {
 		String inputString = readLine();
 		inputString = inputString.trim();
 		int n = Integer.parseInt(inputString);
@@ -57,8 +51,7 @@ public class InputOutput
 	 * 
 	 * @return il numero dato in input dall'utente
 	 */
-	public static double readDouble()
-	{
+	public static double readDouble() {
 		String inputString = readLine();
 		inputString = inputString.trim();
 		double x = Double.parseDouble(inputString);
@@ -70,8 +63,7 @@ public class InputOutput
 	 * 
 	 * @return il primo carattere della riga data in input dall'utente
 	 */
-	public static char readChar()
-	{
+	public static char readChar() {
 		String inputString = readLine();
 		char c = inputString.charAt(0);
 		return c;
@@ -83,16 +75,12 @@ public class InputOutput
 	 * @return
 	 * @throws IOException
 	 */
-	public static int prendiLunghezza() throws IOException
-	{
-		while (true)
-		{
+	public static int prendiLunghezza() throws IOException {
+		while (true) {
 			System.out.println("Inserisci la lunghezza del codice da decifrare fra 4, 6 e 8 numeri: ");
 			String s = InputOutput.readLine();
-			if (s.equals("4") || s.equals("6") || s.equals("8"))
-			{
-				System.out.println("Il codice da decifrare è lungo: " +
-									s);
+			if (s.equals("4") || s.equals("6") || s.equals("8")) {
+				System.out.println("Il codice da decifrare è lungo: " + s);
 				return Integer.parseInt(s);
 			}
 			System.out.println("Insersci il numero 4, 6 o 8!");
@@ -105,19 +93,15 @@ public class InputOutput
 	 * @return
 	 * @throws IOException
 	 */
-	public static boolean prendiDuplicati() throws IOException
-	{
-		while (true)
-		{
+	public static boolean prendiDuplicati() throws IOException {
+		while (true) {
 			System.out.println("Vuoi duplicati nel codice?: (S/N)");
 			String s = InputOutput.readLine();
-			if (s.equals("N"))
-			{
+			if (s.equals("N")) {
 				System.out.println("Non ci saranno duplicati");
 				return false;
 			}
-			if (s.equals("S"))
-			{
+			if (s.equals("S")) {
 				System.out.println("Il codice potrà contenere duplicati");
 				return true;
 			}
@@ -131,19 +115,15 @@ public class InputOutput
 	 * 
 	 * @return True Se il giocatore gioca ancora, altrimenti False.
 	 */
-	public static boolean matchAgain()
-	{
-		while (true)
-		{
+	public static boolean matchAgain() {
+		while (true) {
 			System.out.println("Giochi ancora? (S/N)");
 			String str = InputOutput.readLine();
-			if (str.equals("N"))
-			{
+			if (str.equals("N")) {
 				System.out.println("Arrivederci");
 				return false;
 			}
-			if (str.equals("S"))
-			{
+			if (str.equals("S")) {
 				System.out.println("Ricominciamo!");
 				return true;
 			}
@@ -157,10 +137,8 @@ public class InputOutput
 	 * 
 	 * @return Tipo del giocatore
 	 */
-	public static String typePlayer()
-	{
-		while (true)
-		{
+	public static String typePlayer() {
+		while (true) {
 			System.out.println("Inserisci il tipo di giocatore: 'Bot' o 'Umano' ");
 			String c = InputOutput.readLine();
 			if (c != null)
@@ -174,10 +152,8 @@ public class InputOutput
 	 * 
 	 * @param num
 	 */
-	public static void printNumber(int num)
-	{
-		System.out.println("Numero inserito: " +
-							num);
+	public static void printNumber(int num) {
+		System.out.println("Numero inserito: " + num);
 	}
 
 	/**
@@ -186,11 +162,23 @@ public class InputOutput
 	 * @param max Valore massimo
 	 * @return Il numero preso da tastiera
 	 */
-	public static int getC(int max)
-	{
-		System.out.println("Inserisci un numero compreso tra 1 e " +
-							max);
-		return InputOutput.readInt();
+	public static int getC(int max) {
+		int num = 0;
+		boolean validate = false;
+		do {
+			try {
+				System.out.print("Inserisci un numero compreso tra 1 e " + max + " : ");
+				num = readInt();
+				if (num >= 1 && num <= max)
+					validate = true;
+				else
+					System.err.println("[*] Il numero deve essere compreso tra 1 e " + max + " ,prova di nuovo \n");
+
+			} catch (NumberFormatException e) {
+				System.err.println("[*]Il valore inserito non è un numero, prova di nuovo");
+			}
+		} while (!validate);
+		return num;
 	}
 
 	/**
@@ -198,10 +186,8 @@ public class InputOutput
 	 * 
 	 * @param num Tentativi rimasti
 	 */
-	public static void getAttempts(int num)
-	{
-		System.out.println("Tentativi rimasti: " +
-							num);
+	public static void getAttempts(int num) {
+		System.out.println("Tentativi rimasti: " + num);
 	}
 
 	/**
@@ -209,10 +195,32 @@ public class InputOutput
 	 * 
 	 * @param sugg ArrayList di pioli suggerimento
 	 */
-	public static void getSuggerimento(ArrayList<Pioli> sugg)
-	{
-		System.out.println("Array di sugerimento: " +
-							sugg);
+	public static void getSuggerimento(ArrayList<Pioli> sugg) {
+		System.out.println("Array di sugerimento: " + sugg);
 	}
 
+	/**
+	 * Metodo per stampare a video il logo e le regole del gioco
+	 */
+	public static void stampaLogo() {
+		String logo = "  __  __           _                      _           _  \n"
+				+ " |  \\/  |         | |                    (_)         | | \n"
+				+ " | \\  / | __ _ ___| |_ ___ _ __ _ __ ___  _ _ __   __| | \n"
+				+ " | |\\/| |/ _` / __| __/ _ \\ '__| '_ ` _ \\| | '_ \\ / _` | \n"
+				+ " | |  | | (_| \\__ \\ ||  __/ |  | | | | | | | | | | (_| | \n"
+				+ " |_|  |_|\\__,_|___/\\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_| \n"
+				+ "                                                         \n"
+				+ "                                                         ";
+
+		String regole = "Benvenuti in MasterMind di Moschini Daniele e Benedetti Michele \n"
+				+ "In questa verione di MasterMind inserire come primo giocatore colui che crea il codice da DECODIFICARE, e come\n"
+				+ "secondo giocatore colui che dovrà indovinare il CODICE.\n"
+				+ "La lunghezza del codice è variabile tra 4, 6 e 8 numeri, e si può scegliere se avere duplicati o no nel codice.\n"
+				+ "Il Suggerimento stampato va interpretato come segue: \n"
+				+ "PC = Numero Corretto, nella Posizione Corretta \n"
+				+ "PE = Numero Corretto, nella Posizione Errata \n";
+		System.out.println(logo);
+		System.out.println(regole);
+
+	}
 }
