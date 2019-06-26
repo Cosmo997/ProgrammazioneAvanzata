@@ -82,7 +82,30 @@ public class MatchCoordinator
 	 */
 	public ArrayList<Pioli> check(ArrayList<Integer> tentativo)
 	{
+		ArrayList<Pioli> checkResult = new ArrayList<Pioli>();
+		int rightNumRightPlace = 0;
+		int rightNumWrongPlace = 0;
+		ArrayList<Integer> dafare = campo.getArrayFromDeco();
+		for(int i = 0; i< campo.getArrayFromDeco().size();i++)
+		{
+			if(dafare.contains(tentativo.get(i)))
+			{	
+				if(campo.getArrayFromDeco().get(i).equals(tentativo.get(i))) rightNumRightPlace++;
+				else rightNumWrongPlace++;		
+				dafare.remove(campo.getArrayFromDeco().get(i));
+			}
+		}
+		for (int k = 0; k < rightNumRightPlace; k++)
+		{
+			checkResult.add(Pioli.SIMBOLIPOSIZIONI);
+		}
+		for (int l = 0; l < rightNumWrongPlace; l++)
+		{
+			checkResult.add(Pioli.SIMBOLI);
+		}
+		return checkResult;
 		//TODO AllowDuplicate da fare
+		/*
 		ArrayList<Pioli> checkResult = new ArrayList<Pioli>();
 		ArrayList<Integer> usedNum = new ArrayList<Integer>();
 		int rightNumRightPlace = 0;
@@ -113,7 +136,7 @@ public class MatchCoordinator
 		{
 			checkResult.add(Pioli.SIMBOLI);
 		}
-		return checkResult;
+		return checkResult;*/
 	}
 
 	/**
